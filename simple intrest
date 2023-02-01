@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+float interest_rate(int age) {
+    if (age >= 60) {
+        return 0.12f;
+    } else {
+        return 0.10f;
+    }
+}
+
+float simple_interest(float principle, float rate, int time) {
+    return (principle * rate * time) / 100;
+}
+
+int main()
+{
+    float principle;
+    int age, time;
+    float rate;
+    float interest;
+
+    printf("Enter the principle amount: ");
+    scanf("%f", &principle);
+    printf("Enter the customer's age: ");
+    scanf("%d", &age);
+    printf("Enter the time period (in years): ");
+    scanf("%d", &time);
+
+    rate = interest_rate(age);
+    interest = simple_interest(principle, rate, time);
+
+    printf("Simple interest: %.2f\n", interest);
+
+    return 0;
+}
